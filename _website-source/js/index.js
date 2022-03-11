@@ -139,9 +139,14 @@ class Accordion {
   });
 
   // Init animation of all detail components
-  document.querySelectorAll('details').forEach((el) => {
-    new Accordion(el);
-  });
+  if (
+    !CSS.supports("animation-timeline: foo") &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  ) {
+    document.querySelectorAll('details').forEach((el) => {
+      new Accordion(el);
+    });
+  }
 
   let root = document.documentElement;
 
@@ -163,7 +168,13 @@ class Accordion {
 
     // console.log(height + marginTop + marginBottom);
 
+    // root.style.scrollPaddingTop = (height + marginTop + marginBottom - 179) + "px";
+    // const body = document.querySelector("body");
+    // body.style.scrollPaddingTop = (height + marginTop + marginBottom - 179) + "px";
+
     // root.style.setProperty("--cv-fixed-header-scroll", (height + marginTop + marginBottom) + "px");
+
+    // scroll-padding-top
   }
 
   document.addEventListener('scroll', function (e) {

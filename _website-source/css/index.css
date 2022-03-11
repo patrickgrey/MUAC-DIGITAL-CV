@@ -7,10 +7,20 @@
   --cv-header-subtitle-gap: 1.5rem;
   --cv-header-padding-bottom: 1rem;
   --cv-fixed-header-scroll: calc(164px + 2rem);
+  --cv-header-gradient: 0deg, var(--cv-dark-blue) 0%,
+    rgba(var(--cv-dark-blue-value), 0.7) 100%;
+  --cv-header-transition: all 0.3s ease-in;
 }
 
-html {
-  scroll-padding-top: var(--cv-fixed-header-scroll);
+@media (prefers-reduced-motion) {
+  :root {
+    --cv-header-transition: all 0s ease-in;
+  }
+}
+
+html,
+body {
+  scroll-padding-top: 13rem;
   scroll-behavior: smooth;
   /* scroll-padding-top: calc(164px + 2rem); */
 }
@@ -76,10 +86,6 @@ html {
 }
 
 .cv-header-container {
-  --cv-header-gradient: 0deg, var(--cv-dark-blue) 0%,
-    rgba(var(--cv-dark-blue-value), 0.7) 100%;
-
-  --cv-header-transition: all 0.3s ease-in;
   position: relative;
   width: 100%;
   background-color: var(--cv-dark-blue);
