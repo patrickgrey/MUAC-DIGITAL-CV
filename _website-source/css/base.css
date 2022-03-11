@@ -1,0 +1,309 @@
+/* Colors */
+:root {
+  --max-width: 65ch;
+
+  --cv-white-value: 255, 255, 255;
+  --cv-grey-value: 246, 246, 246;
+  --cv-yellow-value: 249, 204, 0;
+  --cv-blue-value: 60, 164, 255;
+  --cv-green-value: 33, 190, 158;
+  --cv-dark-blue-value: 15, 17, 32;
+
+  /* #ffffff */
+  --cv-white: rgb(var(--cv-white-value));
+  /* #f6f6f6 */
+  --cv-grey: rgb(var(--cv-grey-value));
+  /* #f9cc00 */
+  --cv-yellow: rgb(var(--cv-yellow-value));
+  /* #3ca4ff */
+  --cv-blue: rgb(var(--cv-blue-value));
+  /* #50be9e */
+  --cv-green: rgb(var(--cv-green-value));
+  /* #0f1120 */
+  --cv-dark-blue: rgb(var(--cv-dark-blue-value));
+
+  --ratio: 1.5;
+  --s-5: clamp(0.33rem, 0.39rem + -0.29vw, 0.18rem);
+  --s-4: clamp(0.41rem, 0.47rem + -0.31vw, 0.25rem);
+  --s-3: clamp(0.51rem, 0.57rem + -0.31vw, 0.35rem);
+  --s-2: clamp(0.64rem, 0.69rem + -0.27vw, 0.5rem);
+  --s-1: clamp(0.8rem, 0.84rem + -0.18vw, 0.71rem);
+  --s0: clamp(1rem, 1rem + 0vw, 1rem);
+  --s1: clamp(1.25rem, 1.19rem + 0.32vw, 1.41rem);
+  --s2: clamp(1.56rem, 1.39rem + 0.85vw, 2rem);
+  --s3: clamp(1.95rem, 1.61rem + 1.7vw, 2.83rem);
+  --s4: clamp(2.44rem, 1.83rem + 3.04vw, 4rem);
+  --s5: clamp(3.05rem, 2.04rem + 5.07vw, 5.65rem);
+
+  --cv-clip-octagon: 30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%,
+    0% 70%, 0% 30%;
+}
+
+/* 34.54915% 2.44717%,
+        65.45085% 2.44717%,
+        90.45085% 20.61074%,
+        100% 50%,
+        90.45085% 79.38926%,
+        65.45085% 97.55283%,
+        34.54915% 97.55283%,
+        9.54915% 79.38926%,
+        0% 50%,
+        9.54915% 20.61074% */
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", "ClearSans", Arial, Helvetica, sans-serif;
+  max-inline-size: var(--max-width);
+  outline-color: var(--cv-green);
+  word-break: break-word;
+}
+
+/* Release elements from max width */
+html,
+body,
+article,
+table,
+div,
+img,
+svg,
+header,
+header h1,
+nav,
+main,
+details,
+summary,
+footer {
+  max-inline-size: none;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  color: var(--cv-dark-blue);
+  background-color: var(--cv-white);
+  scrollbar-gutter: stable;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--cv-dark-blue);
+  background-size: 100% 200%;
+  background-position: 0 -100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(var(--cv-dark-blue-value), 1) 50%,
+    transparent 50%
+  );
+  transition: background-position 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--cv-white);
+  background-position: 0 0%;
+}
+
+td,
+p {
+  line-height: 1.6;
+}
+
+::selection {
+  background: var(--cv-yellow);
+  color: var(--cv-dark-blue);
+}
+
+summary {
+  position: relative;
+}
+
+details summary::-webkit-details-marker,
+details summary::marker {
+  display: none;
+  content: "";
+}
+details[open] > summary:after {
+  transform: rotate(90deg);
+}
+summary:after {
+  content: "";
+  border-width: 0.4rem;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--cv-white);
+  /* position: absolute; */
+  display: inline-block;
+  margin-left: 1rem;
+  /* top: 1.3rem;
+  left: 1rem; */
+  transform: rotate(0);
+  transform-origin: 0.2rem 50%;
+  transition: 0.3s transform ease-in;
+}
+
+/* Remove all mouse-triggered focus styles without breaking keyboard accessibility */
+:focus:not(:focus-visible) {
+  outline: none !important;
+}
+
+/* Make sure the footer is at the bottom, even on short pages. */
+.cv-full-height-page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100%;
+}
+
+/* Spacing harmonics */
+main * + * {
+  margin-top: var(--s0);
+}
+
+/* Utility classes */
+
+.cv-visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.cv-clip-octagon {
+  clip-path: polygon(var(--cv-clip-octagon));
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+.pt-0.5 {
+  padding-top: 0.5rem;
+}
+.pt-1 {
+  padding-top: 1rem;
+}
+.pt-1.5 {
+  padding-top: 1.5rem;
+}
+.pt-2 {
+  padding-top: 2rem;
+}
+
+.pb-0 {
+  padding-top: 0;
+}
+.pb-0.5 {
+  padding-top: 0.5rem;
+}
+.pb-1 {
+  padding-top: 1rem;
+}
+.pb-1.5 {
+  padding-top: 1.5rem;
+}
+.pb-2 {
+  padding-top: 2rem;
+}
+
+.pr-0 {
+  padding-top: 0;
+}
+.pr-0.5 {
+  padding-top: 0.5rem;
+}
+.pr-1 {
+  padding-top: 1rem;
+}
+.pr-1.5 {
+  padding-top: 1.5rem;
+}
+.pr-2 {
+  padding-top: 2rem;
+}
+
+.pl-0 {
+  padding-top: 0;
+}
+.pl-0.5 {
+  padding-top: 0.5rem;
+}
+.pl-1 {
+  padding-top: 1rem;
+}
+.pl-1.5 {
+  padding-top: 1.5rem;
+}
+.pl-2 {
+  padding-top: 2rem;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+.mt-0.5 {
+  margin-top: 0.5rem;
+}
+.mt-1 {
+  margin-top: 1rem;
+}
+.mt-1.5 {
+  margin-top: 1.5rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+.mb-0.5 {
+  margin-bottom: 0.5rem;
+}
+.mb-1 {
+  margin-bottom: 1rem;
+}
+.mb-1.5 {
+  margin-bottom: 1.5rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+.mr-0.5 {
+  margin-right: 0.5rem;
+}
+.mr-1 {
+  margin-right: 1rem;
+}
+.mr-1.5 {
+  margin-right: 1.5rem;
+}
+.mr-2 {
+  margin-right: 2rem;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+.ml-0.5 {
+  margin-left: 0.5rem;
+}
+.ml-1 {
+  margin-left: 1rem;
+}
+.ml-1.5 {
+  margin-left: 1.5rem;
+}
+.ml-2 {
+  margin-left: 2rem;
+}

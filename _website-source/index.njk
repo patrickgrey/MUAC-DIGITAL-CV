@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or metadata.title }}</title>
+    <meta name="description" content="{{ description or metadata.description }}">
+
+    <script>
+      document
+        .documentElement
+        .classList
+        .remove('no-js');
+      document
+        .documentElement
+        .classList
+        .add('js');
+    </script>
+
+    <link rel="stylesheet" href="{{ './css/base.css' | url }}">
+    <link rel="stylesheet" href="{{ './css/index.css' | url }}">
+
+    {# <!-- capture the CSS content as a Nunjucks variable -->
+    {% set cssBase %}
+    {% include "./css/base.css" %}
+    {% endset %}
+    <!-- feed it through our cssmin filter to minify -->
+    <style>
+      {{cssBase | cssmin | safe}}
+    </style>
+
+    {% set cssIndex %}
+    {% include "./css/index.css" %}
+    {% endset %}
+    <style>
+      {{cssIndex | cssmin | safe}}
+    </style> #}
+
+    <script defer src="js/index.js"></script>
+  </head>
+  <body>
+    <div class="cv-full-height-page {% if templateClass %}{{ templateClass }}{% endif %}">
+
+      <header class="cv-column">
+
+        <div class="cv-header-container">
+          <div class="cv-profile-img-position">
+            <div class="cv-profile-img-container cv-clip-octagon">
+              <img class="cv-clip-octagon cv-profile-img" src="img/pg-profile.jpg" alt="Profile photo">
+            </div>
+          </div>
+
+          <div class="cv-title-container">
+
+            <h1>
+              <span>Dr Patrick Grey</span>
+            </h1>
+
+            <div class="cv-info-professional">
+              <p>
+                <span class="cv-visually-hidden">Professional information: </span>UK ATCO DeCo 5 [MUAC - OPS]</p>
+            </div>
+
+          </div>
+        </div>
+
+        <details class="cv-menu">
+          <summary>Menu</summary>
+          <nav class="content">
+            <ul>
+              <li>
+                <a href="#cvSkillMeter">Skill Meter</a>
+              </li>
+              <li>
+                <a href="#cvPersonalDevelopment">Personal Development</a>
+              </li>
+              <li>
+                <a href="#cvEducation">Education &amp; Experience</a>
+              </li>
+              <li>
+                <a href="#cvBiography">Biography</a>
+              </li>
+              <li>
+                <a href="#cvContact">Contact Details</a>
+              </li>
+
+            </ul>
+          </na>
+        </details>
+
+      </header>
+
+      <main class="cv-column">
+
+        <div class="cv-section cv-section-top">
+          <h2 id="cvSkillMeter">Skill Meter</h2>
+
+          {% set progressRing %}
+          {% include "progress-ring.svg.njk" %}
+          {% endset %}
+
+          <div class="cv-progress">
+
+            <div class="cv-progress-container" data-progress="30">
+              <h3>Teamwork</h3>
+              <div>
+                {{ progressRing | safe }}
+                <p>
+                  <span class="cv-visually-hidden">Progress percent: </span>30</p>
+              </div>
+            </div>
+
+            <div class="cv-progress-container" data-progress="100">
+              <h3>Leadership</h3>
+              <div>
+                {{ progressRing | safe }}
+                <p>
+                  <span class="cv-visually-hidden">Progress percent: </span>100</p>
+              </div>
+            </div>
+
+            <div class="cv-progress-container" data-progress="55">
+              <h3>People<br/>Mangement</h3>
+              <div>
+                {{ progressRing | safe }}
+                <p>
+                  <span class="cv-visually-hidden">Progress percent: </span>55</p>
+              </div>
+            </div>
+
+            <div class="cv-progress-container" data-progress="85">
+              <h3>Project Management</h3>
+              <div>
+                {{ progressRing | safe }}
+                <p>
+                  <span class="cv-visually-hidden">Progress percent: </span>85</p>
+              </div>
+            </div>
+
+            <div class="cv-progress-container" data-progress="100">
+              <h3>Strategy</h3>
+              <div>
+                {{ progressRing | safe }}
+                <p>
+                  <span class="cv-visually-hidden">Progress percent: </span>100</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="cv-section">
+          <h2 id="cvPersonalDevelopment">Personal Development</h2>
+
+          <table class="cv-personal-development">
+            <caption class="cv-visually-hidden">Personal Development</caption>
+            <tbody>
+              <tr class="cv-personal-aim">
+                <th scope="row">
+                Personal aim:
+              </th>
+                <td>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam cupiditate at expedita vel cumque facere omnis veritatis accusantium culpa in voluptate, beatae, quo blanditiis voluptas, nostrum sunt quae illo. Quaerat.
+                </td>
+              </tr>
+
+              <tr class="cv-career-ambition">
+                <th scope="row">
+                Career ambition:
+              </th>
+                <td class="cv-career-ambition-list">
+                  <h3>Training Officer</h3>
+                  <details class="cv-learning-path">
+                    <summary>
+                      <img src="img/icon-book.svg" alt="Book icon">Learning Path
+                    </summary>
+                    <div class="content">
+                      <p class="mb-1">
+                        <a href="#">Course 1</a>
+                      </p>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim tenetur quas distinctio doloremque quo nostrum architecto vel dolor, esse molestiae nobis quis! Reprehenderit fugiat consequatur soluta at libero iusto alias?</p>
+
+                    </div>
+                  </details>
+                  <h3>OJTI</h3>
+                  <details class="cv-learning-path">
+                    <summary>
+                      <img src="img/icon-book.svg" alt="Book icon">Learning Path
+                    </summary>
+                    <div class="content">
+                      <p class="mb-1">
+                        <a href="#">Course 1</a>
+                      </p>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim tenetur quas distinctio doloremque quo nostrum architecto vel dolor, esse molestiae nobis quis! Reprehenderit fugiat consequatur soluta at libero iusto alias?</p>
+
+                    </div>
+                  </details>
+                  <h3>Supervisor</h3>
+                  <details class="cv-learning-path">
+                    <summary>
+                      <img src="img/icon-book.svg" alt="Book icon">Learning Path
+                    </summary>
+                    <div class="content">
+                      <p class="mb-1">
+                        <a href="#">Course 1</a>
+                      </p>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim tenetur quas distinctio doloremque quo nostrum architecto vel dolor, esse molestiae nobis quis! Reprehenderit fugiat consequatur soluta at libero iusto alias?</p>
+
+                    </div>
+                  </details>
+                </td>
+              </tr>
+
+              <tr class="cv-development-plan">
+                <th scope="row">
+                Development plan:
+              </th>
+                <td>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam cupiditate at expedita vel cumque facere omnis veritatis accusantium culpa in voluptate, beatae, quo blanditiis voluptas, nostrum sunt quae illo. Quaerat.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cv-section">
+
+          <h2 id="cvEducation">Education &amp; Experience</h2>
+
+          <h3>Work Experience</h3>
+
+          <ol class="cv-timeline">
+            <li>
+              <h4>Refresher Training Officer</h4>
+              <div>
+                <em>April 2019 - present</em>
+              </div>
+              <div>MUAC (NL)</div>
+            </li>
+
+            <li class="cv-timeline-right">
+              <h4>Human Factors Expert</h4>
+              <div>
+                <em>Sept 2017 – March 2019</em>
+              </div>
+              <div>MUAC (NL)</div>
+            </li>
+
+            <li>
+              <h4>Air Traffic Controller</h4>
+              <div>
+                <em>Jan 2013 - present</em>
+              </div>
+              <div>MUAC (NL)</div>
+            </li>
+          </ol>
+
+          <h3 class="mt-2">Completed Training</h3>
+
+          <ol class="cv-timeline cv-timeline-completed">
+            <li class="cv-timeline-right">
+              <h4>Certificate of Sustainability in Aviation</h4>
+              <div>
+                <em>May 2013</em>
+              </div>
+              <div>IANS (LU)</div>
+            </li>
+
+            <li>
+              <h4>Civil Engineering – MSc (HONS)</h4>
+              <div>
+                <em>2007 -2011</em>
+              </div>
+              <div>University of London (UK)</div>
+            </li>
+
+          </ol>
+
+          <h3 class="mt-2">Ongoing Training</h3>
+
+          <ol class="cv-timeline ">
+            <li class="cv-timeline-right">
+              <h4>Certificate of Sustainability in Aviation</h4>
+              <div>
+                <em>May 2013</em>
+              </div>
+              <div>IANS (LU)</div>
+            </li>
+
+          </ol>
+        </div>
+
+        <div class="cv-grid-2">
+          <div class="cv-section">
+            <h2 id="cvBiography">Biography</h2>
+
+            <table class="cv-biography">
+              <caption class="cv-visually-hidden">Biography information</caption>
+              <tbody>
+                <tr class="cv-nationality">
+                  <th scope="row">
+                    <p>Nationality:</p>
+                  </th>
+                  <td>
+                    Scottish
+                  </td>
+                </tr>
+                <tr class="cv-dob">
+                  <th scope="row">
+                    <p>Date of birth:</p>
+                  </th>
+                  <td>
+                    28th March 1974
+                  </td>
+                </tr>
+                <tr class="cv-biography">
+                  <th scope="row">
+                    Biography:
+                  </th>
+                  <td>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis tenetur nihil non totam sequi quod facilis id officia nesciunt dolorum! Dignissimos architecto voluptate consequatur. Nemo commodi et dignissimos temporibus soluta.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="cv-section">
+            <h2 id="cvContact">Contact Details</h2>
+
+            <table class="cv-contact">
+              <caption class="cv-visually-hidden">Contact information</caption>
+              <tbody>
+                <tr class="cv-email-work">
+                  <th scope="row">
+                    Work email:
+                  </th>
+                  <td>
+                    <a href="mailto:patrick.grey.ext@eurocontrol.int">patrick.grey.ext@eurocontrol.int</a>
+                  </td>
+                </tr>
+
+                <tr class="cv-email-personal">
+                  <th scope="row">
+                    Personal email:
+                  </th>
+                  <td>
+                    <a href="mailto:websemantic@yahoo.co.uk">websemantic@yahoo.co.uk</a>
+                  </td>
+                </tr>
+
+                <tr class="cv-telephone">
+                  <th scope="row">
+                    Telephone:
+                  </th>
+                  <td>
+                    <a href="tel:++44 7939 666 666">++44 7939 666 666</a>
+                  </td>
+                </tr>
+
+                <tr class="cv-linkedin">
+                  <th scope="row">
+                    LinkedIn:
+                  </th>
+                  <td>
+                    <a href="https://uk.linkedin.com/" target="_blank">https://uk.linkedin.com/</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {# <table class="cv-xxxx">
+          <caption class="cv-visually-hidden">xxxxxx information</caption>
+          <tbody>
+            <tr class="cv-xxxx">
+              <th scope="row">
+                xxxx
+              </th>
+              <td>
+                xxxx
+              </td>
+            </tr>
+          </tbody>
+        </table> #}
+
+      </main>
+
+      <footer>&copy; EUROCONTROL</footer>
+
+    </div>
+
+    <!-- Current page: {{ page.url | url }} -->
+  </body>
+</html>
