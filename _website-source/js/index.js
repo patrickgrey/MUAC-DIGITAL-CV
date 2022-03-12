@@ -159,31 +159,46 @@ class Accordion {
     }
   }
 
-  function setScrollPaddingHeight() {
-    const header = document.querySelector("header");
-    const height = header.clientHeight;
-    var style = window.getComputedStyle ? getComputedStyle(header, null) : header.currentStyle;
-    var marginTop = parseInt(style.marginTop) || 0;
-    var marginBottom = parseInt(style.marginBottom) || 0;
+  // function setScrollPaddingHeight() {
+  //   const header = document.querySelector("header");
+  //   const height = header.clientHeight;
+  //   var style = window.getComputedStyle ? getComputedStyle(header, null) : header.currentStyle;
+  //   var marginTop = parseInt(style.marginTop) || 0;
+  //   var marginBottom = parseInt(style.marginBottom) || 0;
 
-    // console.log(height + marginTop + marginBottom);
+  //   // console.log(height + marginTop + marginBottom);
 
-    // root.style.scrollPaddingTop = (height + marginTop + marginBottom - 179) + "px";
-    // const body = document.querySelector("body");
-    // body.style.scrollPaddingTop = (height + marginTop + marginBottom - 179) + "px";
+  //   // root.style.scrollPaddingTop = (height + marginTop + marginBottom - 179) + "px";
+  //   // const body = document.querySelector("body");
+  //   // body.style.scrollPaddingTop = (height + marginTop + marginBottom - 179) + "px";
 
-    // root.style.setProperty("--cv-fixed-header-scroll", (height + marginTop + marginBottom) + "px");
+  //   // root.style.setProperty("--cv-fixed-header-scroll", (height + marginTop + marginBottom) + "px");
 
-    // scroll-padding-top
-  }
+  //   // scroll-padding-top
+  // }
 
+  // document.addEventListener('scroll', function (e) {
+  //   toggleHeader();
+  //   setScrollPaddingHeight();
+  // });
+
+  let ticking = false;
   document.addEventListener('scroll', function (e) {
-    toggleHeader();
-    setScrollPaddingHeight();
+
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        toggleHeader();
+        // setScrollPaddingHeight();
+        ticking = false;
+      });
+
+      ticking = true;
+    }
   });
 
+
   toggleHeader();
-  setScrollPaddingHeight();
+  // setScrollPaddingHeight();
 
 
 
@@ -191,7 +206,7 @@ class Accordion {
     link.addEventListener("click", function (event) {
       // console.log(event.target);
       // event.preventDefault();
-      setScrollPaddingHeight();
+      // setScrollPaddingHeight();
       const menu = document.querySelector(".cv-menu");
       menu.removeAttribute("open");
       // setTimeout(function () { event.target.dispatchEvent(new Event('click')); }, 20);

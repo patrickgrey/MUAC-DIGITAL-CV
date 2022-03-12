@@ -1,6 +1,7 @@
 :root {
   --cv-hex-border: 6px;
   --cv-header-padding: 1rem;
+  --cv-ec-logo-size: 4rem;
   --cv-header-photo-gap: 0.5rem;
   --cv-header-photo-size: 6rem;
   --cv-header-h1-gap: 1rem;
@@ -223,15 +224,19 @@ header .cv-profile-img-position {
   padding-top: calc(var(--cv-header-photo-gap));
   /* top: calc(var(--cv-header-padding) + var(--cv-header-photo-gap)); */
   left: 50%;
+  top: 0;
   transform-origin: top left;
   transform: translateX(-50%) scale(1);
   transition: var(--cv-header-transition);
 }
 
-header.cv-scroll .cv-profile-img-position {
-  left: var(--cv-header-padding);
-  padding-top: 0;
-  transform: translateX(0) scale(1);
+@media screen and (max-width: 60rem) {
+  header.cv-scroll .cv-profile-img-position {
+    left: calc(var(--cv-header-padding) + 0.25rem);
+    top: calc(var(--cv-ec-logo-size) + 0.5rem);
+    padding-top: 0;
+    transform: translateX(0) scale(0.6);
+  }
 }
 
 header h1 {
@@ -266,6 +271,14 @@ header .cv-profile-img-container {
 header .cv-profile-img {
   object-fit: cover;
   /* padding-top: 0.5rem; */
+}
+
+.cv-ec-logo {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  width: var(--cv-ec-logo-size);
+  height: var(--cv-ec-logo-size);
 }
 
 /*
@@ -425,6 +438,8 @@ main {
 }
 
 .cv-progress-container > div > p {
+  width: 100%;
+  text-align: center;
   position: absolute;
   color: var(--cv-blue);
   font-size: 1.7rem;
@@ -471,7 +486,7 @@ main {
 }
 
 .cv-timeline.cv-timeline-ongoing::before {
-  background-color: var(--cv-yellow);
+  background-color: var(--cv-blue);
 }
 
 .cv-timeline li {
@@ -492,7 +507,7 @@ main {
 }
 
 .cv-timeline-ongoing li {
-  border-bottom-color: var(--cv-yellow);
+  border-bottom-color: var(--cv-blue);
 }
 
 .cv-timeline li::before {
@@ -513,7 +528,7 @@ main {
 }
 
 .cv-timeline-ongoing li::before {
-  background-image: url(../img/icon-hexagon-yellow.svg);
+  background-image: url(../img/icon-hexagon-blue.svg);
 }
 
 .cv-timeline li h4 {
@@ -530,8 +545,8 @@ main {
 }
 
 .cv-timeline-ongoing li h4 {
-  background-color: var(--cv-yellow);
-  color: var(--cv-dark-blue);
+  background-color: var(--cv-blue);
+  /* color: var(--cv-dark-blue); */
 }
 
 .cv-timeline li h4::before {
@@ -551,7 +566,7 @@ main {
 }
 
 .cv-timeline-ongoing li h4::before {
-  border-right-color: var(--cv-yellow);
+  border-right-color: var(--cv-blue);
 }
 
 .cv-timeline li div {
@@ -580,7 +595,7 @@ main {
 }
 
 .cv-timeline-ongoing li div::before {
-  background-image: url(../img/icon-calendar-yellow.svg);
+  background-image: url(../img/icon-calendar-blue.svg);
 }
 
 .cv-timeline li div:last-child::before {
@@ -592,7 +607,7 @@ main {
 }
 
 .cv-timeline-ongoing li div:last-child::before {
-  background-image: url(../img/icon-map-yellow.svg);
+  background-image: url(../img/icon-map-blue.svg);
 }
 
 @media screen and (min-width: 60rem) {
@@ -611,7 +626,7 @@ main {
     left: calc(50% - 1px);
   }
 
-  .cv-timeline li:not(.cv-timeline-right) h4::before {
+  .cv-timeline li h4::before {
     left: 100%;
     border-top: 7px solid transparent;
     border-left: 7px solid var(--cv-green);
@@ -619,13 +634,21 @@ main {
     border-bottom: 7px solid transparent;
   }
 
-  /* .cv-timeline-completed li h4::before {
-    border-right-color: var(--cv-blue);
+  .cv-timeline.cv-timeline-completed li h4::before,
+  .cv-timeline.cv-timeline-ongoing li h4::before {
+    border-left: 7px solid var(--cv-blue);
   }
-  
-  .cv-timeline-ongoing li h4::before {
-    border-right-color: var(--cv-yellow);
-  } */
+
+  .cv-timeline li.cv-timeline-right h4::before {
+    left: -7px;
+    border-right: 7px solid var(--cv-green);
+    border-left: 0;
+  }
+
+  .cv-timeline.cv-timeline-completed li.cv-timeline-right h4::before,
+  .cv-timeline.cv-timeline-ongoing li.cv-timeline-right h4::before {
+    border-right: 7px solid var(--cv-blue);
+  }
 
   .cv-timeline li {
     max-width: calc(50% - 2rem);
@@ -643,11 +666,6 @@ main {
     left: calc(-2.5rem);
   }
 }
-
-/* .cv-career-ambition ul {
-  margin: 0;
-  padding-left: 1rem;
-} */
 
 .cv-career-ambition-list h4:first-child {
   margin-top: 0;
