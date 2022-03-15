@@ -702,6 +702,38 @@ main {
   margin-left: 0;
 }
 
+.cv-link-career-path-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+.cv-link-career-path-container > div {
+  position: relative;
+  margin: 0;
+  padding: 1rem;
+  background-color: var(--cv-green);
+}
+
+.cv-link-career-path-container > div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 2.5rem 0 2.5rem 2rem;
+  border-color: transparent transparent transparent var(--cv-green);
+}
+
+.cv-link-career-path {
+  margin: 0;
+}
+
 /* .cv-career-ambition-list h3 span,
 .cv-path-link {
   
@@ -722,10 +754,16 @@ main {
 
 .cv-button-add-container {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 100%;
   grid-template-rows: 1fr;
   grid-column-gap: 1rem;
   align-items: center;
+}
+
+@media screen and (min-width: 60rem) {
+  .cv-button-add-container {
+    grid-template-columns: 1fr auto;
+  }
 }
 
 .cv-button-add-container-divider {

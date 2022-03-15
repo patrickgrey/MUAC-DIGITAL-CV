@@ -170,6 +170,7 @@ button:active {
 
 .cv-icon-button span,
 .cv-link-icon span {
+  width: 100%;
   margin-top: 0;
   line-height: 1.5rem;
 }
