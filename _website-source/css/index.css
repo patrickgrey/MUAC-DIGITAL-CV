@@ -371,6 +371,7 @@ nav ul li a {
 }
 
 .cv-icon-button-menu {
+  position: relative;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin-left: auto;
@@ -382,6 +383,28 @@ nav ul li a {
 .cv-icon-button-menu:active {
   background-color: var(--cv-blue);
   color: var(--cv-white);
+}
+
+.cv-icon-button-menu svg {
+  transition: var(--cv-header-transition);
+}
+
+.cv-icon-button-menu svg:nth-child(1) {
+  opacity: 1;
+}
+
+.cv-icon-button-menu svg:nth-child(2) {
+  position: absolute;
+  left: 4px;
+  opacity: 0;
+}
+
+nav > div.cv-show .cv-icon-button-menu svg:nth-child(1) {
+  opacity: 0;
+}
+
+nav > div.cv-show .cv-icon-button-menu svg:nth-child(2) {
+  opacity: 1;
 }
 
 @media screen and (min-width: 60rem) {
