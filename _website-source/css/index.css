@@ -396,13 +396,15 @@ nav ul li a {
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-bottom: 5px solid var(--cv-green);
+    /* border-left: 1px solid var(--cv-green);
+    border-right: 1px solid var(--cv-green); */
     /* box-shadow: 0 2px 2px rgba(var(--cv-dark-blue-value), 0.35); */
   }
 
   nav ul {
     list-style: none;
     margin: 0;
-    padding: 0.25rem 0;
+    padding: 0;
     width: 100%;
     max-inline-size: none;
     background-color: var(--cv-grey);
