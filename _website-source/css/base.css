@@ -7,6 +7,7 @@
   --cv-yellow-value: 249, 204, 0;
   --cv-blue-value: 60, 164, 255;
   --cv-green-value: 33, 190, 158;
+  /* 214,53,127 */
   --cv-dark-blue-value: 15, 17, 32;
 
   /* #ffffff */
@@ -119,8 +120,8 @@ button {
   /* width: 2.5rem; */
   height: 2.5rem;
   text-decoration: none;
-  color: var(--cv-white);
-  background: var(--cv-blue);
+  color: var(--cv-dark-blue);
+  background: var(--cv-yellow);
   font-size: 1rem;
   line-height: 1;
   border-radius: 5px;
@@ -133,8 +134,8 @@ button {
 
 button:hover,
 button:focus {
-  background: var(--cv-yellow);
-  color: var(--cv-blue);
+  color: var(--cv-white);
+  background: var(--cv-blue);
 }
 
 /* button:focus {
@@ -179,8 +180,9 @@ button:active {
   width: fit-content;
   height: 2.5rem;
   text-decoration: none;
-  color: var(--cv-white);
-  background: var(--cv-blue);
+  background: var(--cv-yellow);
+  color: var(--cv-dark-blue);
+
   font-size: 1rem;
   line-height: 1;
   border-radius: 5px;
@@ -196,8 +198,8 @@ button:active {
 
 .cv-link-icon:hover,
 .cv-link-icon:focus {
-  background: var(--cv-yellow);
-  color: var(--cv-blue);
+  color: var(--cv-white);
+  background: var(--cv-blue);
 }
 
 /* Summary edit */
