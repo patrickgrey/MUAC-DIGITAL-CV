@@ -17,6 +17,7 @@
         .add('js');
     </script>
 
+    <link rel="stylesheet" href="{{ './css/quill.snow.css' | url }}">
     <link rel="stylesheet" href="{{ './css/base.css' | url }}">
     <link rel="stylesheet" href="{{ './css/index.css' | url }}">
 
@@ -36,6 +37,7 @@
       {{cssIndex | cssmin | safe}}
     </style> #}
 
+    <script defer src="js/quill.min.js"></script>
     <script defer src="js/index.js"></script>
   </head>
   <body>
@@ -52,13 +54,11 @@
 
           <div class="cv-title-container">
 
-            <h1>
-              <span>Dr Patrick Grey</span>
-            </h1>
+            <h1>Dr Patrick Grey</h1>
 
             <div class="cv-info-professional">
-              <p>
-                <span class="cv-visually-hidden">Professional information: </span>UK ATCO DeCo 5 [MUAC - OPS]</p>
+              <span class="cv-visually-hidden">Professional information: </span>
+              UK ATCO DeCo 5 [MUAC - OPS]
             </div>
 
           </div>
@@ -66,7 +66,7 @@
           <img class="cv-ec-logo" src="img/EUROCONTROL-logo-boxed-rgb.svg" alt="EUROCONTROL logo">
         </div>
 
-        <details class="cv-menu">
+        {# <details class="cv-menu">
           <summary>Menu</summary>
           <nav class="content">
             <ul>
@@ -77,8 +77,17 @@
                 <a href="#cvPersonalDevelopment">Personal Development</a>
               </li>
               <li>
-                <a href="#cvEducation">Education &amp; Experience</a>
+                <a href="#cvWorkExperience">Work Experience</a>
               </li>
+
+              <li>
+                <a href="#cvCompletedTraining">Completed Training</a>
+              </li>
+
+              <li>
+                <a href="#cvOngoingTraining">Ongoing Training</a>
+              </li>
+
               <li>
                 <a href="#cvBiography">Biography</a>
               </li>
@@ -87,14 +96,88 @@
               </li>
 
             </ul>
-          </na>
-        </details>
+          </nav>
+        </details> #}
+
+        <nav>
+
+          <div>
+            <ul>
+              <li>
+                <a href="#cvSkillMeter">Skill Meter</a>
+              </li>
+              <li>
+                <a href="#cvPersonalDevelopment">Personal Development</a>
+              </li>
+              <li>
+                <a href="#cvWorkExperience">Work Experience</a>
+              </li>
+
+              <li>
+                <a href="#cvCompletedTraining">Completed Training</a>
+              </li>
+
+              <li>
+                <a href="#cvOngoingTraining">Ongoing Training</a>
+              </li>
+
+              <li>
+                <a href="#cvBiography">Biography</a>
+              </li>
+              <li>
+                <a href="#cvContact">Contact Details</a>
+              </li>
+
+            </ul>
+
+            <button class="cv-icon-button cv-icon-button-menu">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+              <span>menu</span>
+            </button>
+
+          </div>
+        </nav>
 
       </header>
 
       <main class="cv-column">
 
         <div class="cv-section cv-section-top">
+          <h2 id="cvIntro">Digital CV</h2>
+          <div class=" pl-1 pr-1">
+            <p class="mt-0">Hello and welcome to your digital CV. Use this tool to get an overview of your personal goals and professional development. It will also help you plan future training needs. It is an entirely voluntary tool that is set to be private by default.</p>
+
+            <div class="cv-print-container mt-2">
+
+              <button class="cv-icon-button cv-icon-button-edit">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                </svg>
+                <span>Print in Europass format (pdf)</span>
+              </button>
+
+              <button class="cv-icon-button cv-icon-button-edit">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                </svg>
+                <span>Print in Cockpit format (pdf)</span>
+              </button>
+
+              <button class="cv-icon-button cv-icon-button-edit">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                </svg>
+                <span>Share this page</span>
+              </button>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="cv-section">
           <h2 id="cvSkillMeter">Skill Meter</h2>
 
           {% set progressRing %}
@@ -161,9 +244,32 @@
               <tr class="cv-personal-aim">
                 <th scope="row">
                 Personal aim:
-              </th>
-                <td>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam cupiditate at expedita vel cumque facere omnis veritatis accusantium culpa in voluptate, beatae, quo blanditiis voluptas, nostrum sunt quae illo. Quaerat.
+                </th>
+                <td class="pb-2">
+                  <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam cupiditate at expedita vel cumque facere omnis veritatis accusantium culpa in voluptate, beatae, quo blanditiis voluptas, nostrum sunt quae illo. Quaerat.</span>
+
+                  <details class="cv-personal-aim-edit">
+                    <summary class="cv-icon-button cv-link-icon cv-icon-button-edit cv-edit-summary">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                      </svg>
+                      <span>Edit</span>
+                    </summary>
+                    <div class="content">
+                      <div id="cvPersonalAimEditor">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam cupiditate at expedita vel cumque facere omnis veritatis accusantium culpa in voluptate, beatae, quo blanditiis voluptas, nostrum sunt quae illo. Quaerat.</p>
+                      </div>
+                    </div>
+                  </details>
+
+                  {# <div class="cv-edit-button-container mb-1">
+                    <button class="cv-icon-button cv-icon-button-edit">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                      </svg>
+                      <span>Edit</span>
+                    </button>
+                  </div> #}
                 </td>
               </tr>
 
@@ -172,8 +278,32 @@
                 Career ambition:
               </th>
                 <td class="cv-career-ambition-list">
-                  <h3>Training Officer</h3>
-                  <details class="cv-learning-path">
+                  <div class="cv-add-ambition">
+                    <p>
+                      <strong>Want to develop your career?</strong>
+                    </p>
+                    <a class="cv-link-icon" href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                      </svg>
+                      <span>Add a new career ambition</span>
+                    </a>
+                  </div>
+                  <p class="cv-add-ambition-current">
+                    <strong>Current learning paths:</stron>
+                  </p>
+                  <h3>
+                      Training Officer <a class="cv-link-icon cv-path-link" href="#">Learning Path</a>
+                  </h3>
+
+                  <h3>
+                      OJTI <a class="cv-link-icon cv-path-link" href="#">Learning Path</a>
+                  </h3>
+
+                  <h3>
+                      Supervisor <a class="cv-link-icon cv-path-link" href="#">Learning Path</a>
+                  </h3>
+                  {# <details class="cv-learning-path">
                     <summary>
                       <img src="img/icon-book.svg" alt="Book icon">Learning Path
                     </summary>
@@ -184,8 +314,8 @@
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim tenetur quas distinctio doloremque quo nostrum architecto vel dolor, esse molestiae nobis quis! Reprehenderit fugiat consequatur soluta at libero iusto alias?</p>
 
                     </div>
-                  </details>
-                  <h3>OJTI</h3>
+                  </details> #}
+                  {# <h3>OJTI</h3>
                   <details class="cv-learning-path">
                     <summary>
                       <img src="img/icon-book.svg" alt="Book icon">Learning Path
@@ -210,7 +340,7 @@
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim tenetur quas distinctio doloremque quo nostrum architecto vel dolor, esse molestiae nobis quis! Reprehenderit fugiat consequatur soluta at libero iusto alias?</p>
 
                     </div>
-                  </details>
+                  </details> #}
                 </td>
               </tr>
 
@@ -219,7 +349,11 @@
                 Development plan:
               </th>
                 <td>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam cupiditate at expedita vel cumque facere omnis veritatis accusantium culpa in voluptate, beatae, quo blanditiis voluptas, nostrum sunt quae illo. Quaerat.
+                  <span>The personal development plan lets you break down your personal aim into areas for growth, each of which can be broken down into concrete steps to take towards achieving your goals.</span>
+                  <a class="cv-link-icon cv-link-pers-plan" href="#" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>See your personal plan</a>
                 </td>
               </tr>
             </tbody>
@@ -230,64 +364,104 @@
 
           <h2 id="cvEducation">Education &amp; Experience</h2>
 
-          <h3>Work Experience</h3>
+          <div class="cv-button-add-container">
+            <h3 id="cvWorkExperience">Work Experience</h3>
+
+            <button class="cv-icon-button cv-icon-button-plus">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+              </svg>
+              <span>Add work experience</span>
+            </button>
+          </div>
 
           <ol class="cv-timeline">
             <li>
               <h4>Refresher Training Officer</h4>
-              <div>
-                <em>April 2019 - present</em>
+              <div class="cv-grid-2">
+                <div>
+                  <em>Apr 2019 - present</em>
+                </div>
+                <div>MUAC (NL)</div>
               </div>
-              <div>MUAC (NL)</div>
             </li>
 
             <li class="cv-timeline-right">
               <h4>Human Factors Expert</h4>
-              <div>
-                <em>Sept 2017 – March 2019</em>
+              <div class="cv-grid-2">
+                <div>
+                  <em>Sep 2017 – Mar 2019</em>
+                </div>
+                <div>MUAC (NL)</div>
               </div>
-              <div>MUAC (NL)</div>
             </li>
 
             <li>
               <h4>Air Traffic Controller</h4>
-              <div>
-                <em>Jan 2013 - present</em>
+              <div class="cv-grid-2">
+                <div>
+                  <em>Jan 2013 - present</em>
+                </div>
+                <div>MUAC (NL)</div>
               </div>
-              <div>MUAC (NL)</div>
             </li>
           </ol>
 
-          <h3 class="mt-2">Completed Training</h3>
+          {# <h3>Completed Training</h3> #}
+
+          <div class="cv-button-add-container  cv-button-add-container-divider">
+            <h3 id="cvCompletedTraining" class="mt-2">Completed Training</h3>
+
+            <button class="cv-icon-button cv-icon-button-plus">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+              </svg>
+              <span>Add completed training</span>
+            </button>
+          </div>
 
           <ol class="cv-timeline cv-timeline-completed">
             <li class="cv-timeline-right">
               <h4>Certificate of Sustainability in Aviation</h4>
-              <div>
-                <em>May 2013</em>
+              <div class="cv-grid-2">
+                <div>
+                  <em>May 2013</em>
+                </div>
+                <div>IANS (LU)</div>
               </div>
-              <div>IANS (LU)</div>
             </li>
 
             <li>
               <h4>Civil Engineering – MSc (HONS)</h4>
-              <div>
-                <em>2007 -2011</em>
+              <div class="cv-grid-2">
+                <div>
+                  <em>2007 -2011</em>
+                </div>
+                <div>University of London (UK)</div>
               </div>
-              <div>University of London (UK)</div>
             </li>
 
           </ol>
 
-          <h3 class="mt-2">Ongoing Training</h3>
+          <div class="cv-button-add-container  cv-button-add-container-divider">
+            <h3 id="cvOngoingTraining" class="mt-2">Ongoing Training</h3>
+            <button class="cv-icon-button cv-icon-button-plus">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+              <span>Find more training</span>
+            </button>
+          </div>
 
           <ol class="cv-timeline  cv-timeline-ongoing">
             <li class="cv-timeline-right">
               <h4>Certificate of Sustainability in Aviation</h4>
-              <div>
-                <em>May 2013</em>
+              <div class="cv-grid-2">
+                <div>
+                  <em>May 2013</em>
+                </div>
+                <div>IANS (LU)</div>
               </div>
-              <div>IANS (LU)</div>
             </li>
 
           </ol>
@@ -326,9 +500,17 @@
                 </tr>
               </tbody>
             </table>
+            <div class="cv-edit-button-container">
+              <button class="cv-icon-button cv-icon-button-edit">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                </svg>
+                <span>Edit</span>
+              </button>
+            </div>
           </div>
 
-          <div class="cv-section">
+          <div class="cv-section cv-contact-container">
             <h2 id="cvContact">Contact Details</h2>
 
             <table class="cv-contact">
@@ -371,7 +553,16 @@
                 </tr>
               </tbody>
             </table>
+            <div class="cv-edit-button-container">
+              <button class="cv-icon-button cv-icon-button-edit">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                </svg>
+                <span>Edit</span>
+              </button>
+            </div>
           </div>
+
         </div>
 
         {# <table class="cv-xxxx">
@@ -390,7 +581,7 @@
 
       </main>
 
-      <footer>&copy; EUROCONTROL</footer>
+      <footer class="cv-column">&copy; EUROCONTROL</footer>
 
     </div>
 

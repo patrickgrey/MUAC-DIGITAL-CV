@@ -202,23 +202,31 @@ class Accordion {
 
 
 
-  document.querySelectorAll('.cv-menu a').forEach((link) => {
+  document.querySelectorAll('nav a').forEach((link) => {
     link.addEventListener("click", function (event) {
       // console.log(event.target);
       // event.preventDefault();
       // setScrollPaddingHeight();
-      const menu = document.querySelector(".cv-menu");
-      menu.removeAttribute("open");
+      const menu = document.querySelector("nav > div");
+      menu.classList.remove("cv-show");
       // setTimeout(function () { event.target.dispatchEvent(new Event('click')); }, 20);
       // event.target.click();
     }, true);
   });
 
+  document.querySelector("nav button").addEventListener("click", function (event) {
+    document.querySelector("nav > div").classList.toggle("cv-show");
+  });
+
   document.addEventListener("click", function (event) {
-    const menu = document.querySelector(".cv-menu");
+    const menu = document.querySelector("nav button");
     if (!menu.contains(event.target)) {
-      menu.removeAttribute("open");
+      document.querySelector("nav > div").classList.remove("cv-show");
     }
+  });
+
+  var quill = new Quill('#cvPersonalAimEditor', {
+    theme: 'snow'
   });
 
 })();
