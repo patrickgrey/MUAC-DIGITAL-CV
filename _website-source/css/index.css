@@ -370,6 +370,22 @@ nav ul li a {
   background-image: none;
 }
 
+nav ul li.cv-menu-item-mobile {
+  display: block;
+}
+nav ul li.cv-menu-item-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 60rem) {
+  nav ul li.cv-menu-item-mobile {
+    display: none;
+  }
+  nav ul li.cv-menu-item-desktop {
+    display: inline-block;
+  }
+}
+
 .cv-icon-button-menu {
   position: relative;
   border-top-left-radius: 0;
@@ -448,7 +464,13 @@ nav > div.cv-show .cv-icon-button-menu svg:nth-child(2) {
     padding: 0.5rem 0.5rem;
   }
 
-  nav ul li:nth-child(2) a {
+  nav ul li a:hover,
+  nav ul li a:focus,
+  nav ul li a:active {
+    color: var(--cv-blue);
+  }
+
+  nav ul li a.cv-intersecting {
     color: var(--cv-white);
     background-color: var(--cv-green);
   }

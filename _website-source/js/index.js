@@ -126,12 +126,6 @@ class Accordion {
     circle.style.strokeDashoffset = offset;
     circle.style.transform = 'rotate(-90deg)';
 
-    // if (percent > 33 && percent <= 66) {
-    //   circle.setAttribute("stroke", "var(--cv-yellow)");
-    //   text.style.color = "var(--cv-yellow)";
-    // }
-    // else
-
     if (percent === "100") {
       circle.setAttribute("stroke", "var(--cv-green)");
       text.style.color = "var(--cv-green)";
@@ -159,6 +153,9 @@ class Accordion {
     }
   }
 
+
+  // Set scroll padding based on current header height
+
   // function setScrollPaddingHeight() {
   //   const header = document.querySelector("header");
   //   const height = header.clientHeight;
@@ -182,12 +179,29 @@ class Accordion {
   //   setScrollPaddingHeight();
   // });
 
+  function cleanNavMenuHighlights() {
+    const listItems = document.querySelectorAll("nav li > a");
+    let lastHighlightedItemFound = false;
+    for (var i = listItems.length - 1; i >= 0; i--) {
+      const listItem = listItems[i];
+
+      if (lastHighlightedItemFound) {
+        listItem.classList.remove("cv-intersecting")
+      }
+
+      if (listItem.classList.contains("cv-intersecting")) {
+        lastHighlightedItemFound = true;
+      }
+    }
+  }
+
   let ticking = false;
   document.addEventListener('scroll', function (e) {
 
     if (!ticking) {
       window.requestAnimationFrame(function () {
         toggleHeader();
+        // cleanNavMenuHighlights();
         // setScrollPaddingHeight();
         ticking = false;
       });
@@ -198,26 +212,23 @@ class Accordion {
 
 
   toggleHeader();
-  // setScrollPaddingHeight();
+  // cleanNavMenuHighlights();
 
 
-
+  // Close menu on navigation link click
   document.querySelectorAll('nav a').forEach((link) => {
     link.addEventListener("click", function (event) {
-      // console.log(event.target);
-      // event.preventDefault();
-      // setScrollPaddingHeight();
       const menu = document.querySelector("nav > div");
       menu.classList.remove("cv-show");
-      // setTimeout(function () { event.target.dispatchEvent(new Event('click')); }, 20);
-      // event.target.click();
     }, true);
   });
 
+  // Open/Close menu toggle button.
   document.querySelector("nav button").addEventListener("click", function (event) {
     document.querySelector("nav > div").classList.toggle("cv-show");
   });
 
+  // Catch any clicks that are outside the menu so we can close it.
   document.addEventListener("click", function (event) {
     const menu = document.querySelector("nav button");
     if (!menu.contains(event.target)) {
@@ -225,8 +236,55 @@ class Accordion {
     }
   });
 
+  // Init wisywig text editor
   var quill = new Quill('#cvPersonalAimEditor', {
     theme: 'snow'
   });
+
+
+  // https://codepen.io/smashingmag/pen/XWRXVXQ
+  const sections = [...document.querySelectorAll('[ data-section]')]
+  const header = document.querySelector("header");
+
+  const options = {
+    rootMargin: `${header.offsetHeight * -1}px`,
+    threshold: 0
+  }
+
+  const onIntersect = (entries, observer) => {
+
+    entries.forEach((entry) => {
+      const header = entry.target.querySelector("[data-header]");
+      const id = header.id;
+      let isIntersecting = entry.isIntersecting;
+      if (id != "cvIntro") {
+        const menuItem = document.querySelector(`[href='#${id}']`);
+        menuItem.classList.toggle("cv-intersecting", isIntersecting);
+      }
+    });
+
+    // const listItems = document.querySelectorAll("nav li > a");
+    // let lastHighlightedItemFound = false;
+    // for (var i = listItems.length - 1; i >= 0; i--) {
+    //   const listItem = listItems[i];
+
+    //   if (lastHighlightedItemFound) {
+    //     listItem.classList.remove("cv-intersecting")
+    //   }
+
+    //   if (listItem.classList.contains("cv-intersecting")) {
+    //     lastHighlightedItemFound = true;
+    //   }
+    // }
+
+    // Loop backwards through li list
+  }
+
+  const observer = new IntersectionObserver(onIntersect, options)
+
+  sections.forEach((section) => {
+    observer.observe(section)
+  })
+
 
 })();

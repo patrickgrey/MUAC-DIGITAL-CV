@@ -41,9 +41,9 @@
     <script defer src="js/index.js"></script>
   </head>
   <body>
-    <div class="cv-full-height-page {% if templateClass %}{{ templateClass }}{% endif %}">
+    <div class="cv-full-height-page {% if templateClass %}{{ templateClass }}{% endif %}" data-scroller>
 
-      <header class="cv-column">
+      <header class="cv-column" data-header>
 
         <div class="cv-header-container">
           <div class="cv-profile-img-position">
@@ -66,66 +66,36 @@
           <img class="cv-ec-logo" src="img/EUROCONTROL-logo-boxed-rgb.svg" alt="EUROCONTROL logo">
         </div>
 
-        {# <details class="cv-menu">
-          <summary>Menu</summary>
-          <nav class="content">
-            <ul>
-              <li>
-                <a href="#cvSkillMeter">Skill Meter</a>
-              </li>
-              <li>
-                <a href="#cvPersonalDevelopment">Personal Development</a>
-              </li>
-              <li>
-                <a href="#cvWorkExperience">Work Experience</a>
-              </li>
-
-              <li>
-                <a href="#cvCompletedTraining">Completed Training</a>
-              </li>
-
-              <li>
-                <a href="#cvOngoingTraining">Ongoing Training</a>
-              </li>
-
-              <li>
-                <a href="#cvBiography">Biography</a>
-              </li>
-              <li>
-                <a href="#cvContact">Contact Details</a>
-              </li>
-
-            </ul>
-          </nav>
-        </details> #}
-
         <nav>
 
           <div>
             <ul>
               <li>
-                <a href="#cvSkillMeter">Skill Meter</a>
+                <a href="#cvSkillMeter" data-link>Skill Meter</a>
               </li>
               <li>
-                <a href="#cvPersonalDevelopment">Personal Development</a>
+                <a href="#cvPersonalDevelopment" data-link>Personal Development</a>
               </li>
               <li>
-                <a href="#cvWorkExperience">Work Experience</a>
-              </li>
-
-              <li>
-                <a href="#cvCompletedTraining">Completed Training</a>
+                <a href="#cvWorkExperience" data-link>Work Experience</a>
               </li>
 
               <li>
-                <a href="#cvOngoingTraining">Ongoing Training</a>
+                <a href="#cvCompletedTraining" data-link>Completed Training</a>
               </li>
 
               <li>
-                <a href="#cvBiography">Biography</a>
+                <a href="#cvOngoingTraining" data-link>Ongoing Training</a>
               </li>
-              <li>
-                <a href="#cvContact">Contact Details</a>
+
+              <li class="cv-menu-item-desktop">
+                <a href="#cvBiography" data-link>Biography &amp; Contact</a>
+              </li>
+              <li class="cv-menu-item-mobile">
+                <a href="#cvBiography" data-link>Biography</a>
+              </li>
+              <li class="cv-menu-item-mobile">
+                <a href="#cvContact" data-link>Contact Details</a>
               </li>
 
             </ul>
@@ -182,8 +152,8 @@
           </div>
         </div>
 
-        <div class="cv-section">
-          <h2 id="cvSkillMeter">Skill Meter</h2>
+        <div class="cv-section" data-section>
+          <h2 id="cvSkillMeter"  data-header >Skill Meter</h2>
 
           {% set progressRing %}
           {% include "progress-ring.svg.njk" %}
@@ -240,8 +210,8 @@
 
         </div>
 
-        <div class="cv-section">
-          <h2 id="cvPersonalDevelopment">Personal Development</h2>
+        <div class="cv-section" data-section>
+          <h2 id="cvPersonalDevelopment" data-header>Personal Development</h2>
 
           <table class="cv-personal-development">
             <caption class="cv-visually-hidden">Personal Development</caption>
@@ -393,112 +363,118 @@
 
           <h2 id="cvEducation">Education &amp; Experience</h2>
 
-          <div class="cv-button-add-container ">
-            <h3 id="cvWorkExperience">Work Experience</h3>
+          <div data-section>
+            <div class="cv-button-add-container ">
+              <h3 id="cvWorkExperience" data-header>Work Experience</h3>
 
-            <button class="cv-icon-button cv-icon-button-plus">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-              </svg>
-              <span>Add work experience</span>
-            </button>
+              <button class="cv-icon-button cv-icon-button-plus">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                </svg>
+                <span>Add work experience</span>
+              </button>
+            </div>
+
+            <ol class="cv-timeline">
+              <li>
+                <h4>Refresher Training Officer</h4>
+                <div class="cv-grid-2">
+                  <div>
+                    <em>Apr 2019 - present</em>
+                  </div>
+                  <div>MUAC (NL)</div>
+                </div>
+              </li>
+
+              <li class="cv-timeline-right">
+                <h4>Human Factors Expert</h4>
+                <div class="cv-grid-2">
+                  <div>
+                    <em>Sep 2017 – Mar 2019</em>
+                  </div>
+                  <div>MUAC (NL)</div>
+                </div>
+              </li>
+
+              <li>
+                <h4>Air Traffic Controller</h4>
+                <div class="cv-grid-2">
+                  <div>
+                    <em>Jan 2013 - present</em>
+                  </div>
+                  <div>MUAC (NL)</div>
+                </div>
+              </li>
+            </ol>
           </div>
-
-          <ol class="cv-timeline">
-            <li>
-              <h4>Refresher Training Officer</h4>
-              <div class="cv-grid-2">
-                <div>
-                  <em>Apr 2019 - present</em>
-                </div>
-                <div>MUAC (NL)</div>
-              </div>
-            </li>
-
-            <li class="cv-timeline-right">
-              <h4>Human Factors Expert</h4>
-              <div class="cv-grid-2">
-                <div>
-                  <em>Sep 2017 – Mar 2019</em>
-                </div>
-                <div>MUAC (NL)</div>
-              </div>
-            </li>
-
-            <li>
-              <h4>Air Traffic Controller</h4>
-              <div class="cv-grid-2">
-                <div>
-                  <em>Jan 2013 - present</em>
-                </div>
-                <div>MUAC (NL)</div>
-              </div>
-            </li>
-          </ol>
 
           {# <h3>Completed Training</h3> #}
 
-          <div class="cv-button-add-container  cv-button-add-container-divider">
-            <h3 id="cvCompletedTraining" class="mt-2">Completed Training</h3>
+          <div data-section>
+            <div class="cv-button-add-container  cv-button-add-container-divider">
+              <h3 id="cvCompletedTraining" data-header class="mt-2">Completed Training</h3>
 
-            <button class="cv-icon-button cv-icon-button-plus">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-              </svg>
-              <span>Add completed training</span>
-            </button>
+              <button class="cv-icon-button cv-icon-button-plus">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                </svg>
+                <span>Add completed training</span>
+              </button>
+            </div>
+
+            <ol class="cv-timeline cv-timeline-completed">
+              <li class="cv-timeline-right">
+                <h4>Certificate of Sustainability in Aviation</h4>
+                <div class="cv-grid-2">
+                  <div>
+                    <em>May 2013</em>
+                  </div>
+                  <div>IANS (LU)</div>
+                </div>
+              </li>
+
+              <li>
+                <h4>Civil Engineering – MSc (HONS)</h4>
+                <div class="cv-grid-2">
+                  <div>
+                    <em>2007 -2011</em>
+                  </div>
+                  <div>University of London (UK)</div>
+                </div>
+              </li>
+
+            </ol>
           </div>
 
-          <ol class="cv-timeline cv-timeline-completed">
-            <li class="cv-timeline-right">
-              <h4>Certificate of Sustainability in Aviation</h4>
-              <div class="cv-grid-2">
-                <div>
-                  <em>May 2013</em>
+          <div data-section>
+            <div class="cv-button-add-container  cv-button-add-container-divider">
+              <h3 id="cvOngoingTraining" data-header class="mt-2">Ongoing Training</h3>
+              <button class="cv-icon-button cv-icon-button-plus">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <span>Find more training</span>
+              </button>
+            </div>
+
+            <ol class="cv-timeline  cv-timeline-ongoing">
+              <li class="cv-timeline-right">
+                <h4>Certificate of Sustainability in Aviation</h4>
+                <div class="cv-grid-2">
+                  <div>
+                    <em>May 2013</em>
+                  </div>
+                  <div>IANS (LU)</div>
                 </div>
-                <div>IANS (LU)</div>
-              </div>
-            </li>
+              </li>
 
-            <li>
-              <h4>Civil Engineering – MSc (HONS)</h4>
-              <div class="cv-grid-2">
-                <div>
-                  <em>2007 -2011</em>
-                </div>
-                <div>University of London (UK)</div>
-              </div>
-            </li>
-
-          </ol>
-
-          <div class="cv-button-add-container  cv-button-add-container-divider">
-            <h3 id="cvOngoingTraining" class="mt-2">Ongoing Training</h3>
-            <button class="cv-icon-button cv-icon-button-plus">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-              </svg>
-              <span>Find more training</span>
-            </button>
+            </ol>
           </div>
-
-          <ol class="cv-timeline  cv-timeline-ongoing">
-            <li class="cv-timeline-right">
-              <h4>Certificate of Sustainability in Aviation</h4>
-              <div class="cv-grid-2">
-                <div>
-                  <em>May 2013</em>
-                </div>
-                <div>IANS (LU)</div>
-              </div>
-            </li>
-
-          </ol>
         </div>
 
         <div class="cv-grid-2">
-          <div class="cv-section">
-            <h2 id="cvBiography">Biography</h2>
+          <div class="cv-section" data-section>
+            <h2 id="cvBiography" data-header>Biography</h2>
 
             <table class="cv-biography">
               <caption class="cv-visually-hidden">Biography information</caption>
