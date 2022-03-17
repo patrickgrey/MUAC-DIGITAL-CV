@@ -683,7 +683,8 @@ main {
   /* text-align: center; */
   background-color: var(--cv-grey);
   padding: 2rem 1rem;
-  /* border: 2px dashed var(--cv-green); */
+  border-radius: 5px;
+  border: 4px dashed var(--cv-green);
 }
 
 .cv-add-ambition p {
