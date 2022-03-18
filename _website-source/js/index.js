@@ -237,9 +237,9 @@ class Accordion {
   });
 
   // Init wisywig text editor
-  // var quill = new Quill('#cvPersonalAimEditor', {
-  //   theme: 'snow'
-  // });
+  var quill = new Quill('#workDescriptionDiv', {
+    theme: 'snow'
+  });
 
 
   // https://codepen.io/smashingmag/pen/XWRXVXQ
