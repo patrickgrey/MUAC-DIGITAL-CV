@@ -237,9 +237,9 @@ class Accordion {
   });
 
   // Init wisywig text editor
-  var quill = new Quill('#cvPersonalAimEditor', {
-    theme: 'snow'
-  });
+  // var quill = new Quill('#cvPersonalAimEditor', {
+  //   theme: 'snow'
+  // });
 
 
   // https://codepen.io/smashingmag/pen/XWRXVXQ
@@ -284,6 +284,12 @@ class Accordion {
 
   sections.forEach((section) => {
     observer.observe(section)
+  })
+
+  document.querySelectorAll('.cv-career-ambition-dependent').forEach((button) => {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+    })
   })
 
 

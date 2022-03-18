@@ -223,7 +223,14 @@
                 <td class="pb-2">
                   <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam cupiditate at expedita vel cumque facere omnis veritatis accusantium culpa in voluptate, beatae, quo blanditiis voluptas, nostrum sunt quae illo. Quaerat.</span>
 
-                  <details class="cv-personal-aim-edit">
+                  <a class="cv-link-icon mr-0" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                    </svg>
+                    <span>Edit</span>
+                  </a>
+
+                  {# <details class="cv-personal-aim-edit">
                     <summary class="cv-icon-button cv-link-icon cv-icon-button-edit cv-edit-summary">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
@@ -235,7 +242,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam cupiditate at expedita vel cumque facere omnis veritatis accusantium culpa in voluptate, beatae, quo blanditiis voluptas, nostrum sunt quae illo. Quaerat.</p>
                       </div>
                     </div>
-                  </details>
+                  </details> #}
 
                   {# <div class="cv-edit-button-container mb-1">
                     <button class="cv-icon-button cv-icon-button-edit">
@@ -264,31 +271,89 @@
                       <span>Add a new career ambition</span>
                     </a>
                   </div>
-                  <p class="cv-add-ambition-current">
-                    <strong>Current career paths:</stron>
-                  </p>
-                  <div class="mb-2 cv-link-career-path-container">
 
-                    <div>
-                      <a class="cv-link-icon cv-link-career-path" href="#" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                        </svg>Training Officer</a>
+                  <div class="mb-2 ">
+
+                    <a href="#" class="cv-career-ambition-button cv-grid-2">
+                      <img class="cv-career-ambition-img" src="img/course-thumbs/thumb-1.jpg" alt="Training Officer poster image.">
+
+                      <div>
+                        <h3>Training Officer</h3>
+                        <span>
+                          <p>Description Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolorem ratione voluptas sit soluta necessitatibus voluptates tempora optio temporibus corporis, asperiores magni, alias quia dignissimos accusantium quod perspiciatis cumque laboriosam!</p>
+                        </span>
+                        <span>
+                          <p>Status: <strong>complete</strong>
+                          </p>
+                        </span>
+                      </div>
+                    </a>
+
+                    <a href="#" class="cv-career-ambition-button cv-grid-2">
+                      <img class="cv-career-ambition-img" src="img/course-thumbs/thumb-1.jpg" alt="Training Officer poster image.">
+
+                      <div>
+                        <h3>Training Officer</h3>
+                        <span>
+                          <p>Description Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolorem ratione voluptas sit soluta necessitatibus voluptates tempora optio temporibus corporis, asperiores magni, alias quia dignissimos accusantium quod perspiciatis cumque laboriosam!</p>
+                        </span>
+                        <span>
+                          <p>Status: <strong>complete</strong>
+                          </p>
+                        </span>
+                      </div>
+                    </a>
+
+                    <div class="cv-career-ambition-group">
+                      <p>
+                        <strong>Group 1 title</strong>
+                      </p>
+
+                      <a href="#" class="cv-career-ambition-button cv-grid-2">
+                        <img class="cv-career-ambition-img" src="img/course-thumbs/thumb-1.jpg" alt="Training Officer poster image.">
+
+                        <div>
+                          <h3>Training Officer</h3>
+                          <span>
+                            <p>Description Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolorem ratione voluptas sit soluta necessitatibus voluptates tempora optio temporibus corporis, asperiores magni, alias quia dignissimos accusantium quod perspiciatis cumque laboriosam!</p>
+                          </span>
+                          <span>
+                            <p>Status: <strong>complete</strong>
+                            </p>
+                          </span>
+                        </div>
+                      </a>
+
+                      <a href="#" class="cv-career-ambition-button cv-grid-2 cv-career-ambition-dependent">
+                        <img class="cv-career-ambition-img" src="img/course-thumbs/thumb-1.jpg" alt="Training Officer poster image.">
+
+                        <div>
+                          <h3>Training Officer</h3>
+                          <span>
+                            <p>Description Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolorem ratione voluptas sit soluta necessitatibus voluptates tempora optio temporibus corporis, asperiores magni, alias quia dignissimos accusantium quod perspiciatis cumque laboriosam!</p>
+                          </span>
+                          <span>
+                            <p>Status: <strong>complete</strong>
+                            </p>
+                          </span>
+                        </div>
+                      </a>
+
+                      <a href="#" class="cv-career-ambition-button cv-grid-2">
+                        <img class="cv-career-ambition-img" src="img/course-thumbs/thumb-1.jpg" alt="Training Officer poster image.">
+
+                        <div>
+                          <h3>Training Officer</h3>
+                          <span>
+                            <p>Description Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolorem ratione voluptas sit soluta necessitatibus voluptates tempora optio temporibus corporis, asperiores magni, alias quia dignissimos accusantium quod perspiciatis cumque laboriosam!</p>
+                          </span>
+                          <span>
+                            <p>Status: <strong>complete</strong>
+                            </p>
+                          </span>
+                        </div>
+                      </a>
                     </div>
-
-                    <div>
-                      <a class="cv-link-icon cv-link-career-path" href="#" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                        </svg>OJTI</a>
-                    </div>
-
-                    <div>
-                      <a class="cv-link-icon cv-link-career-path" href="#" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                        </svg>Supervisor</a>
-                    </di>
 
                   </div>
                   {# <h3>
@@ -383,6 +448,7 @@
                     <em>Apr 2019 - present</em>
                   </div>
                   <div>MUAC (NL)</div>
+                  <div>Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis expedita enim sunt quis sequi minus asperiores nam facilis in, reprehenderit et odit ut voluptates ex alias ad eum totam quasi.</div>
                 </div>
               </li>
 
@@ -393,6 +459,7 @@
                     <em>Sep 2017 – Mar 2019</em>
                   </div>
                   <div>MUAC (NL)</div>
+                  <div>Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis expedita enim sunt quis sequi minus asperiores nam facilis in, reprehenderit et odit ut voluptates ex alias ad eum totam quasi.</div>
                 </div>
               </li>
 
@@ -440,6 +507,7 @@
                     <em>2007 -2011</em>
                   </div>
                   <div>University of London (UK)</div>
+                  <div>Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis expedita enim sunt quis sequi minus asperiores nam facilis in, reprehenderit et odit ut voluptates ex alias ad eum totam quasi.</div>
                 </div>
               </li>
 
@@ -465,6 +533,7 @@
                     <em>May 2013</em>
                   </div>
                   <div>IANS (LU)</div>
+                  <div>Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis expedita enim sunt quis sequi minus asperiores nam facilis in, reprehenderit et odit ut voluptates ex alias ad eum totam quasi.</div>
                 </div>
               </li>
 
