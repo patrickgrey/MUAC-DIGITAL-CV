@@ -761,6 +761,15 @@ main {
 
 .cv-career-ambition-dependent {
   margin-top: 2rem;
+  border-color: #999;
+  cursor: not-allowed;
+}
+
+.cv-career-ambition-dependent > div h3 {
+  color: #999;
+}
+
+.cv-career-ambition-dependent .cv-career-ambition-img {
   filter: grayscale(100%);
 }
 
@@ -777,7 +786,7 @@ main {
   border-color: transparent transparent var(--cv-green) transparent;
 }
 
-.cv-career-ambition-dependent:hover::after,
+/* .cv-career-ambition-dependent:hover::after,
 .cv-career-ambition-dependent:focus::after,
 .cv-career-ambition-dependent:active::after {
   content: "Please complete the prerequisite above before you can start this course.";
@@ -785,14 +794,13 @@ main {
   padding: 0.5rem;
   font-size: 1.25rem;
   border-radius: 4px;
-  /* border-top-right-radius: 4px; */
   left: 0%;
   top: 0;
   width: calc(100% - 1rem);
   height: calc(100% - 1rem);
   color: var(--cv-white);
   background-color: red;
-}
+} */
 
 /*  */
 
