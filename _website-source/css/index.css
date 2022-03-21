@@ -875,10 +875,103 @@ main {
   max-inline-size: none;
 }
 
+.cv-career-ambition-warning {
+  background-color: var(--cv-blue);
+  color: var(--cv-white);
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+}
+
 .cv-add-ambition-current {
   font-size: 1.25rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
+}
+
+.cv-add-work-experience.content {
+  background-color: var(--cv-grey) !important;
+  padding: 0.5rem;
+}
+
+.cv-add-work-experience label {
+  display: block;
+  font-weight: bold;
+  color: var(--cv-green);
+}
+
+.cv-add-work-experience label[for="workCurrentJob"] {
+  display: inline-block;
+}
+
+.cv-add-work-experience input#workCurrentJob {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.cv-add-work-experience label + * {
+  margin-top: 0.25rem;
+}
+
+.cv-add-work-experience input {
+  font-size: 1rem;
+  padding: 0.25rem;
+  width: 100%;
+  /* border-color: #ccc; */
+}
+
+.cv-add-work-experience hr {
+  border: none;
+  background-color: #ddd;
+  height: 1px;
+  margin: 2rem auto;
+  width: calc(100% - 2rem);
+}
+/* 
+.cv-add-work-experience-name-container {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 1rem;
+} */
+
+.cv-add-work-experience-name-container > div {
+  margin-top: 1rem;
+}
+
+#workDescriptionDiv {
+  display: none;
+}
+
+.js textarea#workDescription {
+  display: none;
+}
+
+.js #workDescriptionDiv,
+.ql-toolbar.ql-snow {
+  display: block;
+  margin-top: 0.25rem;
+  background-color: var(--cv-white);
+}
+
+.js #workDescriptionDiv {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 850px) {
+  .cv-add-work-experience-name-container {
+    margin-top: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cv-add-work-experience-name-container > div {
+    margin: 0;
+  }
 }
 
 /* .cv-career-ambition-list h3 {
@@ -987,7 +1080,7 @@ main {
   grid-template-columns: 100%;
   grid-template-rows: 1fr;
   grid-column-gap: 1rem;
-  align-items: center;
+  align-items: top;
 }
 
 @media screen and (min-width: 80rem) {

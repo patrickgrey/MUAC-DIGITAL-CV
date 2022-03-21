@@ -292,5 +292,20 @@ class Accordion {
     })
   })
 
+  // Copy input text to hidden form field so it can be submitted.
+  const workDescription = document.querySelector("#workDescription");
+  const workDescriptionDiv = document.querySelector("#workDescriptionDiv");
+  const qlEditor = document.querySelector(".ql-editor");
+
+  workDescription.innerText = qlEditor.innerText;
+
+  workDescriptionDiv.addEventListener('keypress', function (event) {
+    workDescription.innerText = qlEditor.innerText;
+  });
+
+
+
+
+
 
 })();

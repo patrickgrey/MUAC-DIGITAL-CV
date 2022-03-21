@@ -315,6 +315,7 @@
 
                         <div>
                           <h3>Disabled course</h3>
+                          <p class="cv-career-ambition-warning">Please complete the prerequisite course to enable this course.</p>
                           <span>
                             <p>Description Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolorem ratione voluptas sit soluta necessitatibus voluptates tempora optio temporibus corporis, asperiores magni, alias quia dignissimos accusantium quod perspiciatis cumque laboriosam!</p>
                           </span>
@@ -432,22 +433,38 @@
                   </svg>
                   <span>Add work experience</span>
                 </summary>
-                <div class="content">
-                  <form action="#">
+                <div class="content cv-add-work-experience">
+                  <form action="#" class="mt-1">
 
-                    <label for="workTitle">Title</label>
+                    <label for="workTitle">Job Title</label>
                     <input type="text" id="workTitle">
-                    <label for="workStartDate">Start date</label>
-                    <input type="date" id="workStartDate">
-                    <label for="workCurrentJob">This is my current job</label>
-                    <input type="checkbox" id="workCurrentJob" checked>
-                    <label for="workEndDate">End date</label>
-                    <input type="date" id="workEndDate">
+
+                    <label for="workLocation">Job location</label>
+                    <input type="text" id="workLocation">
+
+                    <hr>
+
+                    <div class="cv-grid-2">
+                      <div>
+                        <label for="workStartDate">Start date</label>
+                        <input type="date" id="workStartDate">
+                      </div>
+                      <div>
+                        <label for="workEndDate">End date (leave blank if it's your current job)</label>
+                        <input type="date" id="workEndDate">
+                      </div>
+
+                    </div >
+                    <hr>
+
                     <label for="workDescription">Job description</label>
-                    <textarea rows="5" type="text" id="workDescription" name="workDescription"></textarea>
-                    <div id="workDescriptionDiv">
+                    <textarea rows="5" type="text" id="workDescription" name="workDescription" aria-hidden="true"></textarea>
+                    <div id="workDescriptionDiv" class="mb-1">
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam cupiditate at expedita vel cumque facere omnis veritatis accusantium culpa in voluptate, beatae, quo blanditiis voluptas, nostrum sunt quae illo. Quaerat.</p>
                     </div>
+
+                    <button class="cv-icon-button" type="submit" value="Submit">Submit</button>
+                    <button class="cv-icon-button" type="reset" value="Reset">Reset</button>
                   </form>
 
                 </div>

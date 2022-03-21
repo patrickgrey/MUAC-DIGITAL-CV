@@ -146,6 +146,11 @@ button:focus {
 button:active {
   transform: scale(0.99);
 }
+
+button[type="submit"],
+button[type="reset"] {
+  display: inline-block;
+}
 /* Button styles end */
 
 /* Buttons */
@@ -201,6 +206,10 @@ button:active {
 .cv-link-icon:focus {
   color: var(--cv-white);
   background: var(--cv-blue);
+}
+
+textarea {
+  width: 100%;
 }
 
 /* Summary edit */
