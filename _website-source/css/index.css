@@ -974,6 +974,10 @@ main {
   }
 }
 
+.cv-link-icon.cv-link-pers-plan {
+  margin-right: 0;
+}
+
 /* .cv-career-ambition-list h3 {
   width: fit-content;
   background-color: var(--cv-green);
