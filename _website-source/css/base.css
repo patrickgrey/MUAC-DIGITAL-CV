@@ -295,7 +295,8 @@ main * + * {
 }
 
 .cv-clip-octagon {
-  clip-path: polygon(var(--cv-clip-octagon));
+  /* clip-path: polygon(var(--cv-clip-octagon)); */
+  border-radius: 50%;
 }
 
 .pt-0 {

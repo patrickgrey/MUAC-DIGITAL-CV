@@ -16,13 +16,13 @@
         .classList
         .add('js');
     </script>
-    
-<link rel="stylesheet" href="{{ './css/quill.snow.css' | url }}">
-    {#
-    <link rel="stylesheet" href="{{ './css/base.css' | url }}">
-    <link rel="stylesheet" href="{{ './css/index.css' | url }}"> #}
 
-     <!-- capture the CSS content as a Nunjucks variable -->
+    <link rel="stylesheet" href="{{ './css/quill.snow.css' | url }}">
+
+    <link rel="stylesheet" href="{{ './css/base.css' | url }}">
+    <link rel="stylesheet" href="{{ './css/index.css' | url }}">
+
+    {# <!-- capture the CSS content as a Nunjucks variable -->
     {% set cssBase %}
     {% include "./css/base.css" %}
     {% endset %}
@@ -36,7 +36,7 @@
     {% endset %}
     <style>
       {{cssIndex | cssmin | safe}}
-    </style>
+    </style>#}
 
     <script defer src="js/quill.min.js"></script>
     <script defer src="js/index.js"></script>
@@ -50,6 +50,7 @@
           <div class="cv-profile-img-position">
             <div class="cv-profile-img-container cv-clip-octagon">
               <img class="cv-clip-octagon cv-profile-img" src="img/pg-profile.jpg" alt="Profile photo">
+              <img class="cv-flag-img" src="img/flags/1x1/lu.svg" alt="Nationality flag">
             </div>
           </div>
 
@@ -63,6 +64,12 @@
             </div>
 
           </div>
+
+          <a class="cv-link-icon mr-0 cv-header-edit" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+            </svg>
+          </a>
 
           {# <img class="cv-ec-logo" src="img/EUROCONTROL-logo-boxed-rgb.svg" alt="EUROCONTROL logo"> #}
         </div>
@@ -222,7 +229,9 @@
                 Personal aim:
                 </th>
                 <td class="pb-2">
-                  <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam cupiditate at expedita vel cumque facere omnis veritatis accusantium culpa in voluptate, beatae, quo blanditiis voluptas, nostrum sunt quae illo. Quaerat.</span>
+                  <strong>&ldquo;</strong>
+                  <span class="mt-0">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam cupiditate at expedita vel cumque facere omnis veritatis accusantium culpa in voluptate, beatae, quo blanditiis voluptas, nostrum sunt quae illo. Quaerat.</span>
 
                   <a class="cv-link-icon mr-0" href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -230,6 +239,18 @@
                     </svg>
                     <span>Edit</span>
                   </a>
+
+                  <div class="cv-add-ambition">
+                    <p>
+                      <strong>Please add your personal aim.</strong>
+                    </p>
+                    <a class="cv-link-icon mr-0" href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                      </svg>
+                      <span>Add</span>
+                    </a>
+                  </div>
 
                   {# <div class="cv-edit-button-container mb-1">
                     <button class="cv-icon-button cv-icon-button-edit">
