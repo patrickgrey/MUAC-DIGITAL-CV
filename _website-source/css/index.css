@@ -90,13 +90,13 @@ header .cv-header-container {
   width: 100%;
   color: var(--cv-white);
   background-color: var(--cv-blue);
-  background-image: url(../img/header-bg/YScEbfrLc--320.jpeg);
+  background-image: url(../img/header-bg/header-bg-sharp-fixed.jpg);
   /* border-left: 1px solid var(--cv-white);
   border-right: 1px solid var(--cv-white); */
   border-bottom: 1px solid var(--cv-green);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 100% 50%;
+  background-position: 90% 50%;
   padding: var(--cv-header-padding);
   padding-bottom: var(--cv-header-padding-bottom);
   transition: var(--cv-header-transition);
@@ -112,6 +112,7 @@ header.cv-scroll .cv-header-container {
   padding: 0;
   height: calc(var(--cv-ec-logo-size) + var(--cv-header-padding));
   height: 100%;
+  background-position: 100% 45%;
 }
 
 header .cv-header-container {
@@ -150,32 +151,32 @@ header .cv-header-container {
 
 @media screen and (min-width: 640px) {
   header .cv-header-container {
-    background-image: url(../img/header-bg/YScEbfrLc--640.jpeg);
+    /* background-image: url(../img/header-bg/YScEbfrLc--640.jpeg); */
   }
 }
 
 @media screen and (min-width: 960px) {
   header .cv-header-container {
-    background-image: url(../img/header-bg/YScEbfrLc--960.jpeg);
+    /* background-image: url(../img/header-bg/YScEbfrLc--960.jpeg); */
   }
 }
 
 @media screen and (min-width: 1200px) {
   header .cv-header-container {
-    background-image: url(../img/header-bg/YScEbfrLc--1200.jpeg);
+    /* background-image: url(../img/header-bg/YScEbfrLc--1200.jpeg); */
     background-position: 50% 50%;
   }
 }
 
 @media screen and (min-width: 1800px) {
   header .cv-header-container {
-    background-image: url(../img/header-bg/YScEbfrLc--1800.jpeg);
+    /* background-image: url(../img/header-bg/YScEbfrLc--1800.jpeg); */
   }
 }
 
 @media screen and (min-width: 2400px) {
   header .cv-header-container {
-    background-image: url(../img/header-bg/YScEbfrLc--2400.jpeg);
+    /* background-image: url(../img/header-bg/YScEbfrLc--2400.jpeg); */
   }
 }
 
